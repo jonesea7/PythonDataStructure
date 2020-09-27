@@ -27,3 +27,67 @@ colorSetA.add("Purple")
 print("We used the add() to add Purple to set A.")
 print("Is Set A still a sub set of unifyColorSets?")
 print(colorSetA.issubset(unifyColorSets))
+
+#PYTHON THE HARDWAY Exercise 38 pgs. 134-
+
+product_specialist_names = "Luke Eddy Sophie Rosy Angelo"
+
+seperated_names = product_specialist_names.split(' ')
+
+other_product_specialists = ["Jim", "Mike", "Sara", "Craig", "Kim"]
+
+while len(seperated_names) != 10:
+    next_name = other_product_specialists.pop()
+    print(f"Adding: {next_name}")
+    seperated_names.append(next_name)
+    print(f"There are {len(seperated_names)} product specialists in the array now.")
+
+print(f"There we go: {seperated_names}")
+
+print("Let's rearrange the  names in our list.")
+
+print(f"The specialist in the second index is {seperated_names[1]}")
+
+print(f"The product specialist at the end of the list is {seperated_names[-1]}.")
+
+print(seperated_names.pop())
+print("The pop() method 'pops' out the name at the end of the list.")
+
+print(' '.join(seperated_names))
+print("That was the join() method.")
+print('#'.join(seperated_names[3:5]))
+
+#Now let's create our first product specialist 'object' with a dictionary and manipulate the data
+
+#but first we have to separate the names again
+
+#seperated_names = seperated_names.split(' ')
+
+print(seperated_names)
+
+
+
+#let's add some PEP for readibility here
+product_specialist = {
+    'Name': seperated_names[1], 
+    'Age' : 37, 
+    'Height' : round(((6-0.4)*12 + 2), 2)
+}
+
+#let's create a function for converting feet into cm to improve readibility
+#lower case with _ and should have verb for clarity
+def convert_feet_to_centimeters(height_in_feet):
+    return round((height_in_feet*12 + 2), 2) 
+
+
+height_of_product_specialist = convert_feet_to_centimeters(5.4)
+
+#Let's change the height of the product specialist in the dictionary
+product_specialist["Height"] = height_of_product_specialist
+
+print(product_specialist)
+
+
+print(product_specialist["Name"])
+print(product_specialist["Age"])
+print(product_specialist["Height"])
