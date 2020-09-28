@@ -91,3 +91,53 @@ print(product_specialist)
 print(product_specialist["Name"])
 print(product_specialist["Age"])
 print(product_specialist["Height"])
+
+product_specialist[4] = "Favorite Movie"
+product_specialist[5] = "Favorite Song"
+
+print(product_specialist[4])
+
+del product_specialist[5]
+
+#EXERCISE 39 PAGE 141
+
+# Create mapping to associate on thing with another
+
+zoned_product_specialists = {
+    'Mark' : 'Zone 1',
+    'Jimbo' : 'Zone 2',
+    'Eddy' : 'Zone 3'
+}
+
+# Map zones to the cars in that zone
+
+car_zones = {
+    'Zone 1' : 'SUVs',
+    'Zone 2' : 'Compacts',
+    'Zone 3' : 'AlternativeFuelVehicles'
+}
+
+# If it is a really big show, we can add more zones
+
+car_zones['Zone 4'] = "Hero Vehicles"
+car_zones['Zone 5'] = "Swag Activation"
+
+#Let's get more specific here
+car_zones['Zone 1'] = [
+    "Santa Fe",
+    "Tucson",
+    "Palisade"
+]
+
+print("Zone 1 has: ", car_zones['Zone 1'])
+
+# This prints whatever is in the str ten times. Very cool.
+print('-' * 10)
+
+# what are in all the zones again
+print("Zone 2 has: ", car_zones["Zone 2"])
+print("Zone 3 has: ", car_zones['Zone 3'])
+print("Zone 4 has: ", car_zones["Zone 4"])
+
+
+
