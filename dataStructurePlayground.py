@@ -57,7 +57,7 @@ print(' '.join(seperated_names))
 print("That was the join() method.")
 print('#'.join(seperated_names[3:5]))
 
-#Now let's create our first product specialist 'object' with a dictionary and manipulate the data
+
 
 #but first we have to separate the names again
 
@@ -66,7 +66,7 @@ print('#'.join(seperated_names[3:5]))
 print(seperated_names)
 
 
-
+#Now let's create our first product specialist 'object' with a dictionary and manipulate the data
 #let's add some PEP for readibility here
 product_specialist = {
     'Name': seperated_names[1], 
@@ -141,3 +141,49 @@ print("Zone 4 has: ", car_zones["Zone 4"])
 
 
 
+#CHALLENGE: Collect and list of product specialist from the user
+#Assign them all equally to a zone between 1-3
+
+#Set up our containers for our list of production specialists
+product_specialists_on_duty = []
+
+#Set up our containers for our zone that will house array of product 
+    #specialists.
+zone_1 = []
+zone_2 = []
+zone_3 = []
+
+#Greet the user and provide instruction
+print("""Hello, Angelo. Please insert the first name of each product specialist on duty this shift.
+     Please include a space between each name.""")
+
+#Ask the user for names of product specialist (how will we exit this loop?)
+product_specialists_on_duty = input("List product specialists now: ")
+
+#Show user the list input
+print(f"To be clear, we have: {product_specialists_on_duty}.")
+
+#Take the str and separate into individuals in an array
+product_specialists_on_duty = product_specialists_on_duty.split(" ")
+print(product_specialists_on_duty)
+
+
+while len(product_specialists_on_duty)  != 10:
+    #pop() the name of a products specialist and assign it to zone one
+    collected_ps_name = product_specialists_on_duty.pop()
+    zone_1.append(collected_ps_name)
+    print(f"Zone 1 now has: ", zone_1)
+#Add an integer to the zone and go to zone 2    
+#pop() next PS and add to zone 2
+    collected_ps_name = product_specialists_on_duty.pop()
+    zone_2.append(collected_ps_name)
+    print(f"Zone 2 now has: ", zone_2)
+#Move to zone 3
+#pop() next PS and add to zone 3
+    collected_ps_name = product_specialists_on_duty.pop()
+    zone_3.append(collected_ps_name)
+    
+
+print("Once again, Zone 1 has: ", zone_1)
+print("Zone 2 has: ", zone_2)
+print("Zone 3 has: ", zone_3)
